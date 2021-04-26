@@ -1,1 +1,1 @@
-### Link your references in here
+[Read more](http://bsa-iiith.vlabs.ac.in/exp1/Exp-1%20Rigid%20joint.pdf)

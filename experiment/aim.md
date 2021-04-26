@@ -1,1 +1,4 @@
-### Aim of the experiment
+Rigid frames, usually referred to simply as frames, are composed of straight members connected either by rigid (moment - resisting) connections or by hinged connections to form stable configuration. Rigid frame implies a plane structural system consisting of straight members meeting each other at an angle and rigidly connected at the junction. The members of frames are usually connected by rigid joints, although hinged connections are sometimes used. A rigid joint prevents relative translations and rotations of the member ends connected to it, so the joint is capable of transmitting two rectangular force components and a couple between the connected members. A rigid connection keeps unchanged the angle between members as the entire frame distorts under load.
+
+
+[Read more](http://bsa-iiith.vlabs.ac.in/exp1/Exp-1%20Rigid%20joint.pdf)
