@@ -1,4 +1,5 @@
 #### Types of Joints
+
 All the structural members in framed buildings or trusses must be adequately connected together so that the applied loads are transferred safely to the ground surface. The types of connection or joints are basically divided into two: stiff and pinned joint.
 
 #### Stiff Joint
