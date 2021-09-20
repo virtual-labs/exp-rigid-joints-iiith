@@ -1,1 +1,1 @@
-### Procedure
+<a href="docs/Exp-1 Rigid joint.pdf">[Read more]</a>
