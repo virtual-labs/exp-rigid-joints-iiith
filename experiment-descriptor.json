@@ -14,13 +14,6 @@
       "content-type": "text"
     },
     {
-      "target": "pretest.html",
-      "source": "pretest.json",
-      "label": "Pretest",
-      "unit-type": "task",
-      "content-type": "assesment"
-    },
-    {
       "target": "procedure.html",
       "source": "procedure.md",
       "label": "Procedure",
@@ -33,13 +26,6 @@
       "label": "Simulation",
       "unit-type": "task",
       "content-type": "simulation"
-    },
-    {
-      "target": "posttest.html",
-      "source": "posttest.json",
-      "label": "Posttest",
-      "unit-type": "task",
-      "content-type": "assesment"
     },
     {
       "target": "references.html",
