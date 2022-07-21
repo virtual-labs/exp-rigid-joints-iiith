@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.6-b/css/style.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="js/bulma-slider.min.js"></script>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+	</head>
+	<body class="page">
+		<div class="columns is-centered is-flex">
+			<div class="column mt-2 is-10-desktop is-10-tablet is-10-mobile has-text-centered">
+				<div class="v-instruction-container">
+					<div class="v-instruction-title">Instructions</div>
+					<div id="procedure-message" class="v-instruction-text" style=" text-align:left;"></div>
+				</div> 
+
+				<div class="column center-content">
+					<div class="select" >
+							<select id="dropdown" onchange="onSelection()"></select>
+					</div>
+					<p><span class="boundaryType"></span></p>
+				</div>
+				
+	 			<div class="columns is-mobile is-centered is-flex">
+	 				<div id="anime-demo" class="column has-text-centered controls">
+						<button id="play" class="v-button" onclick="playSimulation()">Start</button>
+						<button id="restart" class="v-button" onclick = "window.location.reload()">Reset</button>
+					</div> 
+				</div>
+
+			</div>
+		</div>
+		<!-- -->
+		
+		<div class="columns is-centered is-variable is-flex is-flex-wrap-wrap workspace">
+			<div id="apparatus" class="column has-text-centered is-2-desktop is-5-tablet is-5-mobile apparatus">
+				<div class="v-datalist-container">
+					<div class="v-datalist-title" id="load"> Load Type</div>	
+	            	<label class="v-radio v-datalist-row" id="radio-style">
+	            		<input type="radio" class="v-radio-input" name="answer" value="Load"	 id="plbtn" >Stiff Joints</label>
+	            	<label class="v-radio v-datalist-row" id="radio-style">
+	            		<input type="radio" class="v-radio-input" name="answer" value="UDL">Pinned Joints</label>
+         
+	            	<!-- <div class="v-datalist-title">Input Parameters</div>          				
+	 				<label class="v-checkbox v-datalist-row" id="radio-style"> 
+	        			<input id="length" type="checkbox" class="v-checkbox-input" step="10"  value="50" >Length(mts): 50</label> 
+	 					<output id="lenoutput"></output> 
+
+	 				<label class="v-checkbox v-datalist-row" id="radio-style"> 
+	 					<input id="depth" type="checkbox" class="v-checkbox-input"  step="10"  value="50" >Depth(mm): 50</label>
+	 					<output id="depoutput"></output>  -->
+				</div>
+
+			</div>
+
+			<div id="observations" class="column has-text-centered is-2-desktop is-5-tablet is-5-mobile observations">
+				<div class="v-datalist-container">
+					<div class="v-datalist-title">Observations</div>
+					<!---cantiliver starts-->
+						<div id="set1"  class="" style="width: 100%; display: none;" >
+ 							<svg class="canti-pl-sfd" width="180px" height="90px" viewBox="1 143 865 70">
+									<path d="M 200 450 C 250 300 200 250 200 150 L 250 150 L 250 200 L 200 200 L 200 150 C 300 100 350 100 450 150 L 450 200 L 400 200 L 400 150 L 450 150 C 450 250 400 350 450 450" style="stroke:black;fill:none;stroke-width:5px;" />
+									<p id="mes1"  class="" style="width: 100%; font-size:14px;"></p>
+								</svg>
+									
+
+						</div>
+
+						<div id="set2" class="" style="width: 100%; display: none;">
+							<svg class="canti-udl-sfd" width="180px" height="90px" viewBox="1 143 865 70">
+									<path d="M 0 150 L 800 150 L 800 100 L 350 100 L 350 250 L 0 100 L 0 150" style="stroke:black;fill:none;stroke-width:5px;" />
+									<p id="mes3"  class="" style="width: 100%; font-size:14px;"></p>
+								</svg>
+								
+
+						</div>
+						
+
+							
+
+				</div>
+			</div>
+
+			<div class="column has-text-centered is-6-desktop is-10-tablet is-10-mobile simulation v-canvas-container" id="container">
+					<!-- <canvas id="main" class="v-canvas-container"></canvas> -->
+					<!-- <div></div> -->
+				
+				<div class="columns">
+  					<div class="column">
+  						<!-- arrow starts -->
+						<div id="arrow" class="arrow column">
+							<svg version="1.1" id="Capa_1"  width="550" height="100"viewBox="20 0 120 80" preserveAspectRatio="xMaxYMin meet">
+								<g id="arrow_down">
+									<path style="fill:#030104;" d="M32,16.016l-5.672-5.664c0,0-3.18,3.18-6.312,6.312V0h-8.023v16.664l-6.32-6.32L0,16.016L16,32 L32,16.016z"/>
+								</g>
+							</svg>
+						</div>
+						<div id ="arrow-udl"  style=" display: none;">
+							<svg width="149" height="38" viewBox="0 0 149 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g>									
+								<path d="M10.9393 37.0607C11.5251 37.6464 12.4749 37.6464 13.0607 37.0607L22.6066 27.5147C23.1924 26.9289 23.1924 25.9792 22.6066 25.3934C22.0208 24.8076 21.0711 24.8076 20.4853 25.3934L12 33.8787L3.51472 25.3934C2.92893 24.8076 1.97918 24.8076 1.3934 25.3934C0.807612 25.9792 0.807612 26.9289 1.3934 27.5147L10.9393 37.0607ZM10.5 0L10.5 36H13.5L13.5 0L10.5 0Z" fill="black"/>
+								<path d="M42.9393 37.0607C43.5251 37.6464 44.4749 37.6464 45.0607 37.0607L54.6066 27.5147C55.1924 26.9289 55.1924 25.9792 54.6066 25.3934C54.0208 24.8076 53.0711 24.8076 52.4853 25.3934L44 33.8787L35.5147 25.3934C34.9289 24.8076 33.9792 24.8076 33.3934 25.3934C32.8076 25.9792 32.8076 26.9289 33.3934 27.5147L42.9393 37.0607ZM42.5 0V36H45.5V0L42.5 0Z" fill="black"/>
+								<path d="M74.9393 37.0607C75.5251 37.6464 76.4749 37.6464 77.0607 37.0607L86.6066 27.5147C87.1924 26.9289 87.1924 25.9792 86.6066 25.3934C86.0208 24.8076 85.0711 24.8076 84.4853 25.3934L76 33.8787L67.5147 25.3934C66.9289 24.8076 65.9792 24.8076 65.3934 25.3934C64.8076 25.9792 64.8076 26.9289 65.3934 27.5147L74.9393 37.0607ZM74.5 0V36H77.5V0L74.5 0Z" fill="black"/>
+								<path d="M105.939 37.0607C106.525 37.6464 107.475 37.6464 108.061 37.0607L117.607 27.5147C118.192 26.9289 118.192 25.9792 117.607 25.3934C117.021 24.8076 116.071 24.8076 115.485 25.3934L107 33.8787L98.5147 25.3934C97.9289 24.8076 96.9792 24.8076 96.3934 25.3934C95.8076 25.9792 95.8076 26.9289 96.3934 27.5147L105.939 37.0607ZM105.5 0V36H108.5V0L105.5 0Z" fill="black"/>
+								<path d="M135.939 37.0607C136.525 37.6464 137.475 37.6464 138.061 37.0607L147.607 27.5147C148.192 26.9289 148.192 25.9792 147.607 25.3934C147.021 24.8076 146.071 24.8076 145.485 25.3934L137 33.8787L128.515 25.3934C127.929 24.8076 126.979 24.8076 126.393 25.3934C125.808 25.9792 125.808 26.9289 126.393 27.5147L135.939 37.0607ZM135.5 0V36H138.5V0L135.5 0Z" fill="black"/>
+							</g>
+							</svg>
+							
+						</div>
+						<!--arrow ends-->
+
+
+						
+						<!-- Main cantilever beam start here--->
+						<div id="main-beam1" style="display: none;">
+							<svg class="" width="484" height="168" viewBox="0 102 948 113"  stroke="#BA8C63" fill="#BA8C63">
+								<path id="canti-pl-main-beam" class="st1" d="M 50 350 L 200 350 L 100 350 L 100 50 L 400 50 L 400 350 L 450 350 L 300 350 L 350 350 L 350 100 L 150 100 L 150 350"/> 			
+							</svg>
+						</div>
+						<div id="main-beam2" style="display: none;">
+							<svg class="" width="484" height="390" viewBox="0 288 900 150"  stroke="#BA8C63" fill="#BA8C63">
+								<path id="canti-udl-main-beam" class="st1" d="M 50 600 L 200 600 L 100 600 L 100 50 C 150 50 300 50 400 50 L 400 600 L 450 600 L 300 600 L 350 600 L 350 350 L 150 350 L 150 600 L 150 300 L 350 300 L 350 100 L 150 100 L 150 300"/> 			
+							</svg>
+						</div>
+						<!-- Main cantilever beam Ends here--->
+						
+						
+		
+						
+					</div>		
+
+
+
+
+
+
+  							 <!-- cantiliver point load and UDL starts here DEFLECTION OF BEAM-->
+					<div id="beam1" style="display: none;">
+						<svg class="" width="484" height="168" viewBox="00 150 900 150"  stroke="#BA8C63" fill="#BA8C63">
+							<path id="canti-beam-pl"  class="st1" d="M 50 350 L 200 350 L 100 350 C 150 250 150 200 100 50 C 200 0 300 0 400 50 C 350 200 350 250 400 350 L 450 350 L 300 350 L 350 350 C 325 225 300 200 350 100 C 300 50 200 50 150 100 C 200 200 175 225 150 350 " />
+						</svg>
+					</div>
+					<div id="beam2" style="display: none;">	
+						<svg class="" width="484" height="168" viewBox="00 150 900 150"  stroke="#BA8C63" fill="#BA8C63">
+					 		<path id="canti-beam-udl" class="st1" d="M 150 550 C 150 375 250 350 200 300 C 200 150 300 150 250 50 C 350 100 350 0 500 50 C 550 100 450 200 500 300 C 500 350 400 400 400 550 L 350 550 C 350 400 450 350 450 300 L 500 300 C 400 300 350 350 250 300 L 250 250 C 350 300 350 250 450 250 C 400 200 500 150 450 100 C 400 50 400 150 300 100 C 350 150 250 150 250 300 L 200 300 L 250 300 C 300 400 200 400 200 550 L 150 550 " />
+						</svg>
+					</div>
+					<!-- cantiliver point load and UDL ends here-->
+					
+				
+					
+
+  				</div>
+			</div>
+			
+			<script src="./js/main.js"></script>
+	 		<script src="./js/animations.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>			
+			<script src="https://cdn.jsdelivr.net/npm/kute.js@2.0.10/dist/kute.min.js"></script>
+		<script src="../assets/js/iframeResize.js"></script></body>
+	</html>
