@@ -1,0 +1,32 @@
+[
+   {
+      "question":"1. How many equilibrium equations do we need to solve generally on each joint of a truss?",
+      "answers":{
+         "a":"1",
+         "b":"2",
+         "c":"3",
+         "d":"4"
+      },
+      "correctAnswer":"b"
+   },
+   {
+      "question":"2. If in a pin-jointed plane frame (m + r) > 2j, then the frame is",
+      "answers":{
+         "a":"Stable and statically determinate",
+         "b":"Stable and statically indeterminate",
+         "c":"Unstable",
+         "d":"None of the above(Where 'M' number of members, 'r' is reaction components and 'j' number of joints)"
+      },
+      "correctAnswer":"b"
+   },
+   {
+      "question":"3. Independent displacement components at each joint of a rigid-jointed plane frame are",
+      "answers":{
+         "a":"Three linear movements",
+         "b":"Two linear movements and one rotation",
+         "c":"One linear movement and two rotations",
+         "d":"Three rotations"
+      },
+      "correctAnswer":"b"
+   }
+]

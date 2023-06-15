@@ -1,0 +1,32 @@
+[
+   {
+      "question":"1. Number of unknown internal forces in each member of a rigid jointed plane frame is",
+      "answers":{
+         "a":"1",
+         "b":"2",
+         "c":"3",
+         "d":"6"
+      },
+      "correctAnswer":"c"
+   },
+   {
+      "question":"2. Number of unknown internal forces in each member of a rigid jointed plane frame is",
+      "answers":{
+         "a":"1",
+         "b":"2",
+         "c":"3",
+         "d":"4"
+      },
+      "correctAnswer":"d"
+   },
+   {
+      "question":"3. Independent displacement components at each joint of a rigid-jointed plane frame are.",
+      "answers":{
+         "a":"Three linear movements",
+         "b":"Three linear movements",
+         "c":"Three linear movements",
+         "d":"Three rotations"
+      },
+      "correctAnswer":"b"
+   }
+]
